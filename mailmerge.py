@@ -491,7 +491,7 @@ class MergeData(object):
 
     @classmethod
     def _get_instr_tokens(cls, instr):
-        s = shlex.shlex(instr, posix=True)
+        s = shlex.split(quote(instr), posix=False)
         s.whitespace_split = True
         s.commenters = ""
         s.escape = ""
